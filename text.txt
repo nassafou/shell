@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 Ceci est un texte d'essai. Il est à utiliser pour des tests.
 Jean-Louis
+=======
+ceci est texte d'essai. Il est a utiliser pour les tests
+>>>>>>> master
