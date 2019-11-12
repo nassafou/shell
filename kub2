@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sed 's/[^:]*:/:/2' </etc/passwd >/etc/password.new
