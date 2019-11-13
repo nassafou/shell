@@ -1,3 +1,5 @@
 #!/bin/sh
 
 sed 's/^\(.\)\(.\)\(.\)/\3\2\1/'
+# Or, to use extended regular expressions (ERE) normally:
+sed -r 's/^(.)(.)(.)/\3\2\1/'
