@@ -1,15 +1,10 @@
 #!/bin/bash
 
 
-FICHIERSAUVE=backup-$(date +%m-%d-%Y)
+printf -v FICHIERSAUVE "backup-%(%m-%d-%Y)T.tar.gz" -1
 
-archive=${1:-$FICHIERSAUVE}
+ARCHIVE=${1:-$FICHIERSAUVE}
 # nous utiliserons par défaut "backup-MM-JJ-AAAA.tar.gz."
 
-tar cvf - `find . -mtime -1 -type f -print` > $archive.tar
-gzip $archive.tar
-echo "Répertoire $PWD sauvegardé dans un fichier archive \"$archive.tar.gz\"."
-
-exit 0
-
-
+find -mtime -1 -type f -exec tar -czvf "$ARCHIVE" {} \+
+printf "Répertoire '%s' sauvegardé dans un fichier archive '%s.tar.gz'.\n" "$PWD" "$ARCHIVE"
