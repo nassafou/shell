@@ -12,9 +12,9 @@ services:
       - '50000:50000'
     volumes:
       - 'jenkins_data:/jenkins_config'  
-    #  - /srv/data/jenkins:/var/jenkins_config
+      - /srv/data/jenkins:/var/jenkins_config
 volumes:
   jenkins_data:
     driver: local
-#  jenkins:
-#    driver: local
+  jenkins:
+    driver: local
